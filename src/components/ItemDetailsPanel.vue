@@ -227,7 +227,17 @@
   .slide-up-leave-to {
     transform: translateY(100%);
   }
-  
+  html[data-theme='light'] {
+  .item-details {
+    background: rgba(255, 255, 255, 0.1);
+    &__close {
+      filter: invert(1);
+    }
+  }
+  .delete-confirm {
+    background: #fff;
+  }
+}
  
   </style>
   

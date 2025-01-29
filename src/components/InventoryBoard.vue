@@ -225,4 +225,16 @@ onBeforeUnmount(() => {
     }
   }
 }
+
+html[data-theme='light'] {
+  .inventory-item {
+    &:hover {
+      background: #efefef;
+    }
+    &__quantity {
+      background: #fff;
+      color: $dark-text-color;
+    }
+  }
+}
 </style>

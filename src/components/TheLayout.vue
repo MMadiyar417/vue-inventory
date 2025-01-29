@@ -156,4 +156,18 @@ const closeFooter = () => {
     }
   }
 }
+html[data-theme='light'] {
+  .profile {
+    &__main,
+    &__aside,
+    &__footer {
+      background: $primary-color;
+    }
+    &__footer {
+      &-close {
+        filter: invert(1);
+      }
+    }
+  }
+}
 </style>
