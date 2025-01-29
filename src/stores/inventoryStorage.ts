@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 
-interface InventoryItem {
+export interface InventoryItem {
   id: string;
   name: string;
   description: string;
@@ -38,11 +38,22 @@ const defaultItems: InventoryItem[] = [
     x: 2,
     y: 0,
   },
+  {
+    id: '4',
+    name: 'Item 4',
+    description: 'Description 4',
+    quantity: 999,
+    image: 'item-1.svg',
+    x: 0,
+    y: 2,
+  },
 ];
 
 export const useInventoryStore = defineStore('inventory', {
   state: () => {
     const storedItems = localStorage.getItem('inventory');
+    console.log('Stored items:', storedItems);
+
     return {
       items: storedItems
         ? (JSON.parse(storedItems) as InventoryItem[])
