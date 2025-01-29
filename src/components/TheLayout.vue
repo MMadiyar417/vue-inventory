@@ -1,16 +1,3 @@
-<script setup lang="ts">
-import { ref } from 'vue';
-import { Skeletor } from 'vue-skeletor';
-import 'vue-skeletor/dist/vue-skeletor.css';
-import MyButton from '@/components/ui/MyButton.vue';
-import MyIcon from '@/components/ui/MyIcon.vue';
-
-const isFooterOpen = ref(true);
-const closeFooter = () => {
-  isFooterOpen.value = false;
-};
-</script>
-
 <template>
   <div class="profile">
     <aside class="profile__aside">
@@ -36,7 +23,9 @@ const closeFooter = () => {
         <Skeletor class="profile__note" width="40%" height="10" />
       </div>
     </aside>
-    <main class="profile__main"></main>
+    <main class="profile__main">
+        <inventory-board />
+    </main>
     <footer class="profile__footer" v-if="isFooterOpen">
       <Skeletor height="36px" />
       <my-button
@@ -49,6 +38,19 @@ const closeFooter = () => {
     </footer>
   </div>
 </template>
+
+<script setup lang="ts">
+import { ref } from 'vue';
+import { Skeletor } from 'vue-skeletor';
+import 'vue-skeletor/dist/vue-skeletor.css';
+import MyButton from './ui/MyButton.vue';
+import MyIcon from './ui/MyIcon.vue';
+import InventoryBoard from './InventoryBoard.vue';
+const isFooterOpen = ref(true);
+const closeFooter = () => {
+  isFooterOpen.value = false;
+};
+</script>
 
 <style scoped lang="scss">
 .profile {
